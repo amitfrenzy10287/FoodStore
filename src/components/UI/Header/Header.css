@@ -1,0 +1,58 @@
+.headerContainer{
+	height:74px;
+	display:block;
+	width:100%;
+}
+.topnav {
+	margin: 0; padding: 0;
+	float: left;
+	width: 100%;
+	list-style: none;
+	position: relative; /*--Set relative positioning on the unordered list itself - not on the list item--*/
+	font-size: 1.2em;
+	background: black repeat-x;
+}
+.topnav li {
+	float: left;
+	margin: 0; padding: 0;
+	border-right: 1px solid #555; /*--Divider for each parent level links--*/
+}
+.topnav li a {
+	padding: 10px 15px;
+	display: block;
+	color: #f0f0f0;
+	text-decoration: none;
+}
+.topnav li:hover { background: #920ce6 repeat-x; }
+.topnav li.active { background: #920ce6 repeat-x; }
+
+.topnav li span {
+	float: left;
+	padding: 5px;
+	position: absolute;
+	left: 0; top:35px;
+	display: none; /*--Hide by default--*/
+	width: 100%;
+	background: #920ce6;
+	color: #fff;
+	/*--Bottom right rounded corner--*/
+	-moz-border-radius-bottomright: 5px;
+	-khtml-border-radius-bottomright: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	/*--Bottom left rounded corner--*/
+	-moz-border-radius-bottomleft: 5px;
+	-khtml-border-radius-bottomleft: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+} 
+.topnav li a.active {background: #920ce6}
+.topnav li:hover span { display: block; } /*--Show subnav on hover--*/
+.topnav li:has(> a.active) span{ display: block; } /*--Show subnav on hover--*/
+.topnav li a.active:first-of-type + span{
+    display: block;
+}
+.topnav li a.active:first-of-type + span > a {
+	border-bottom: solid 2px #f2f2f2;
+}
+/*.topnav li span { display: block; }*/
+.topnav li span a { display: inline; } /*--Since we declared a link style on the parent list link, we will correct it back to its original state--*/
+.topnav li span a:hover {text-decoration: none;}
